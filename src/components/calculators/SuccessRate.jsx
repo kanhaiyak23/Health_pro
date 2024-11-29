@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 export function SuccessRateCircle({ percentage, cycles }) {
-  const radius = 60; 
+  const radius = 60;
   const strokeWidth = 12;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (percentage / 100) * circumference;
@@ -10,9 +10,9 @@ export function SuccessRateCircle({ percentage, cycles }) {
     <div className="relative w-56 h-56">
       <svg
         className="w-full h-full transform -rotate-90"
-        viewBox="0 0 160 160" 
+        viewBox="0 0 160 160"
       >
-        
+        {/* Background Circle */}
         <circle
           cx="80"
           cy="80"
@@ -23,6 +23,7 @@ export function SuccessRateCircle({ percentage, cycles }) {
           className="text-emerald-100"
         />
 
+        {/* Progress Circle */}
         <circle
           cx="80"
           cy="80"
@@ -32,14 +33,19 @@ export function SuccessRateCircle({ percentage, cycles }) {
           fill="transparent"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
-          className="text-emerald-500 transition-all duration-1000 ease-out"
+          className="text-[#5BD489] transition-all duration-1000 ease-out"
         />
       </svg>
 
+      {/* Percentage in the center */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-        <span className="text-3xl font-bold text-white">{percentage}%</span>
-        <p className="text-sm text-gray-600 mt-1 transform ">With {cycles} IVF Cycle</p>
+        <span className="text-5xl font-bold text-white">{percentage}%</span>
       </div>
+
+      {/* IVF Cycle Text below the circle */}
+      <p className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm text-white mt-1 text-center">
+        With {cycles} IVF Cycle
+      </p>
     </div>
   );
 }
