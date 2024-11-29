@@ -15,7 +15,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => (
   <AnimatePresence>
     {isMenuOpen && (
       <>
-        {/* Backdrop Overlay */}
+     
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -24,16 +24,16 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => (
           onClick={toggleMenu}
         />
 
-        {/* Side Menu (Open from Left) */}
+       
         <motion.div
-          initial={{ x: '-100%' }}  // Start from the left
-          animate={{ x: 0 }}         // Slide in to the right
-          exit={{ x: '-100%' }}      // Slide back to the left on exit
+          initial={{ x: '-100%' }}  
+          animate={{ x: 0 }}         
+          exit={{ x: '-100%' }}     
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           className="fixed top-0 left-0 h-full w-[80%] max-w-sm bg-white dark:bg-gray-900 shadow-2xl z-50"
         >
           <div className="flex flex-col h-full">
-            {/* Header Section */}
+          
             <div className="flex items-center justify-between p-4 border-b dark:border-gray-800">
               <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Menu</h2>
               <button
@@ -44,7 +44,7 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => (
               </button>
             </div>
 
-            {/* Navigation Items */}
+        
             <nav className="flex-1 overflow-y-auto py-4">
               <div className="px-4 space-y-1">
                 {menuItems.map((item, index) => (
@@ -67,7 +67,6 @@ const MobileMenu = ({ isMenuOpen, toggleMenu }) => (
               </div>
             </nav>
 
-            {/* Talk to Us Button */}
             <div className="p-4 border-t dark:border-gray-800">
               <button
                 onClick={toggleMenu}
