@@ -34,7 +34,7 @@ export function CalculatorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-yellow-50 py-8">
+    <div className="min-h-screen bg-[#FCFAF5] py-8">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumb
           items={[
@@ -46,7 +46,7 @@ export function CalculatorPage() {
         <div className="mt-8 p-6 md:p-8">
           <div className="space-y-8">
             <div>
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4  ">
                 Which age range applies to you?
               </h2>
               <RadioGroup

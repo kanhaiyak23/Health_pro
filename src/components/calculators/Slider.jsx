@@ -5,7 +5,7 @@ export function Slider({ value, onChange, min, max }) {
 
   return (
     <div className="relative pt-8">
-      {/* Slider Value with SVG */}
+
       <div className="relative flex items-center justify-center mb-4">
         <div
           className="absolute -top- flex items-center justify-center text-[#F48265]"
@@ -35,20 +35,20 @@ export function Slider({ value, onChange, min, max }) {
         </div>
       </div>
 
-      {/* Slider Input */}
+    
       <input
         type="range"
         min={min}
         max={max}
         value={value}
         onChange={(e) => onChange(parseInt(e.target.value))}
-        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
+        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg focus:outline-none border-r-2  accent-[#F48265]  "
         style={{
           background: `linear-gradient(to right, #F48265 ${sliderPercentage}%, #e5e7eb ${sliderPercentage}%)`,
         }}
       />
 
-      {/* Min/Max Labels */}
+
       <div className="flex justify-between text-xs text-gray-600 px-2 mt-2">
         <span>{min}</span>
         <span>{max}</span>
